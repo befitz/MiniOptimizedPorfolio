@@ -1,5 +1,7 @@
 # MiniOptimizedPorfolio
 
+## MiniOptimizedPorfolio(ETF_Ticker, Portfolio_value)
+
 Takes in ETF stock symbol and returns the descrete allocation, remaining funds, portfolio perfomrance, and dataframe (of company name, ticker, and suggested allocation)
 
 Input Example:
