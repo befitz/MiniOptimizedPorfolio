@@ -48,3 +48,5 @@ def Historical_Prices_Fetch(ETF_Ticker, period):
 
 	return final
 
+df = Historical_Prices_Fetch('IWR', '6mo')
+print(df)
