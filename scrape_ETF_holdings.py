@@ -14,8 +14,11 @@ def scrape_stock_symbols(Ticker):
 	results = soup.find_all(attrs={"data-th": "Symbol"})
 	result_counter = 0
 	for result in results:
-		i_result = results[result_counter]
-		company_tickers.append(i_result.find('a').text)
+		try:
+			i_result = results[result_counter]
+			company_tickers.append(i_result.find('a').text)
+		except:
+			pass
 		result_counter += 1
 	
 	return company_tickers
