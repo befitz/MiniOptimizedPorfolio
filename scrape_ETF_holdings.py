@@ -4,7 +4,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import time
 
-company_ticker = []
+company_tickers = []
 
 def scrape_stock_symbols(Ticker):
 	Ticker = Ticker.upper()
@@ -15,11 +15,12 @@ def scrape_stock_symbols(Ticker):
 	result_counter = 0
 	for result in results:
 		i_result = results[result_counter]
-		company_ticker.append(i_result.find('a').text)
+		company_tickers.append(i_result.find('a').text)
 		result_counter += 1
 	
-	print(company_ticker)
+	return company_tickers
 
 
 
-scrape_stock_symbols('IWR')
+#company_tickers = scrape_stock_symbols('IWR')
+#print(company_tickers)
