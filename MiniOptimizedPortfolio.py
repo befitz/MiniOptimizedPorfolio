@@ -57,7 +57,10 @@ def MiniOptimizedPortfolio(ETF_Ticker, portfolio_val):
 	portfolio_df = pd.DataFrame(columns = ['company_name', 'company_ticker', 'Descrete_val_'+str(portfolio_val)])
 	portfolio_df['company_name'] = company_name
 	portfolio_df['company_ticker'] = allocation
-	portfolio_df['Discrete_val_'+str(portfolio_val)] = descrete_allocation_list
+	portfolio_df['Descrete_val_'+str(portfolio_val)] = descrete_allocation_list
 
 	print(ef.portfolio_performance(verbose=True))
 	print(portfolio_df)
+
+
+MiniOptimizedPortfolio('IJH', 3000)
