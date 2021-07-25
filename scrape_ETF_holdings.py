@@ -22,8 +22,3 @@ def scrape_stock_symbols(Ticker):
 		result_counter += 1
 	
 	return company_tickers
-
-
-
-#company_tickers = scrape_stock_symbols('IWR')
-#print(company_tickers)
