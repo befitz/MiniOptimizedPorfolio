@@ -61,6 +61,3 @@ def MiniOptimizedPortfolio(ETF_Ticker, portfolio_val):
 
 	print(ef.portfolio_performance(verbose=True))
 	print(portfolio_df)
-
-
-#MiniOptimizedPortfolio('VOO', 3000)
