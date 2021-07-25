@@ -39,13 +39,12 @@ def pivot_historical_prices(df):
 
 
 #The function daddy
+#Returns the formated final dataframe for MiniOptimizedPortfolio
 def Historical_Prices_Fetch(ETF_Ticker, period):
 	ETF_Ticker = ETF_Ticker
 	period = period
 	raw_df =Fetch_raw_dataframe(ETF_Ticker, period)
 	final = pivot_historical_prices(raw_df)
 
-	print(final)
+	return final
 
-
-Historical_Prices_Fetch('IWR', '6mo')
