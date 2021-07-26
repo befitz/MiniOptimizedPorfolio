@@ -63,4 +63,4 @@ def MiniOptimizedPortfolio(ETF_Ticker, portfolio_val):
 	print(portfolio_df)
 
 
-MiniOptimizedPortfolio('IJH', 3000)
+MiniOptimizedPortfolio('BBMC', 3000)
