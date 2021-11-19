@@ -6,8 +6,12 @@ from scrape_ETF_holdings import *
 
 
 #Function that takes in the ETF fund ticker and # of days to retrive -> returns the holdings historical prices
-def Fetch_raw_dataframe(ETF_Ticker, period):
-	company_tickers = scrape_stock_symbols(f'{ETF_Ticker}') #returns a list of basket tickers
+#manual is auto or manual, auto looks to scrape the holdings, manual requires you provide the list of securities
+def Fetch_raw_dataframe(manual, ETF_Ticker, period, company_tickers):
+	if manual == "auto":
+		company_tickers = scrape_stock_symbols(f'{ETF_Ticker}') #returns a list of basket tickers
+	else:
+		company_tickers = company_tickers
 	i=0
 	dfs = []
 	for i in range(0,len(company_tickers)):
@@ -40,10 +44,10 @@ def pivot_historical_prices(df):
 
 #The function daddy
 #Returns the formated final dataframe for MiniOptimizedPortfolio
-def Historical_Prices_Fetch(ETF_Ticker, period):
+def Historical_Prices_Fetch(manual, ETF_Ticker, period, company_tickers):
 	ETF_Ticker = ETF_Ticker
 	period = period
-	raw_df =Fetch_raw_dataframe(ETF_Ticker, period)
+	raw_df =Fetch_raw_dataframe(manual, ETF_Ticker, period, company_tickers)
 	final = pivot_historical_prices(raw_df)
 
 	return final
