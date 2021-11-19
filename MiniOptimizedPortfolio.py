@@ -19,10 +19,7 @@ def Calculate_Cleaned_Weights(df, ETF_Ticker):
 	ef = EfficientFrontier(mu, S)#Create the efficient frontier object
 	#ef.add_objective(objective_functions.L2_reg, gamma=0.1)
 	weights = ef.max_sharpe()#Optimize for the maximal Sharpe ratio (how much excess return given the risk)
-	if ETF_Ticker = "crypto":
-		cleaned_weights = ef
-	else:
-		cleaned_weights = ef.clean_weights()
+	cleaned_weights = ef.clean_weights()
 
 	return cleaned_weights, ef
 
